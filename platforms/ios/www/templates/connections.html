@@ -1,0 +1,47 @@
+<ion-view title="Amparra" >
+<ion-nav-buttons side="left">
+<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+
+<ion-content  ng-controller="TodoCtrl" class="has-header" id="connections-header"  >
+
+
+<div class="connectionsHeader"><img src="images/connections_bg.png" alt="header">
+  <div class="subheader-Connection">
+   Neueste Connections
+ </div>       
+</div>     
+<table border="1"  class="singleConnection">
+  <tr ng-repeat="connection in row "class="tr-con" >
+    <td class="columns-Main" ng-click="detail({{connection.id}})">
+      <div>
+      <div class="connection-title-main">{{connection.title}} </div>
+      <div class="columns-Sub">
+        <div class="connection-userCell">
+          <img ng-src="images/b.png" id="rank">
+        </div>
+        <div class="connection-userCell">
+          {{connection.user.name}}
+        </div>
+      </div>
+      </div>
+    </td>
+    <td class="columns-Main"> 
+      <div class="left-Cell" >
+        <div class="columns-Sub">
+          <div class="user-Ranking">
+            {{connection.user.ranking_title}}
+          </div>
+          <div class="user-Ranking">
+            <img href="#/app/connection"ng-src="images/stars_big_empty{{connection.user.ranking_stars}}.png" alt="{{connection.user.ranking_stars}}" class="ranking">
+          </div>
+        </div>
+        <div class="columns-Sub">
+          <a href="#/app/connection?myVar1={{connection.id}}" style="margin-top: 20px;vertical-align:middle;" class="icon ion-chevron-right"></a>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+</ion-content>
+</ion-view>

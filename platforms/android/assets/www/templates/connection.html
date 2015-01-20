@@ -1,0 +1,53 @@
+<ion-view title="{{con.offer.title}}"ng-controller="MyCtrl" >
+<ion-nav-buttons side="left">
+</ion-nav-buttons>
+<ion-content class="has-header" id="connections-header"  >
+
+<div class="connection-title-main">{{con.offer.title}}</div>
+<div class="container">
+  <img class="connection-preview" src="images/reference-preview.png" alt="header">
+  <br>
+  <button class="button enquiry">Anfrage stellen</button>
+</div>
+<div class="connection-description-title">Beschreibung</div>
+<div class="connection-description"></div>
+<div class="connection-description-title">Bewertung</div>
+<div>
+  <img ng-src="images/stars_big_empty{{con.offer.rating}}.png" alt="{{con.offer.rating}}" class="ranking-stars"> {{con.offer.rating}}
+</div>
+<div class="connection-description-title">Anbieter</div>
+<table border="1"  class="singleConnection">
+  <tr>
+    <td class="columns-Main" >
+      <div class="user">
+        <div class="userName">
+        	<div class="connection-userName">
+            <img ng-src="images/b.png" class="rankConnection">
+          </div>
+          <div class="connection-userName">
+            {{con.user.name}}
+          </div>
+        </div>
+      </div>
+    </td>
+    <td class="columns"> 
+      <p>   
+        <div class="columns-Sub">
+          <div class="user-Ranking">
+            {{con.user.ranking}}
+          </div>
+          <div >
+            <img ng-src="images/stars_big_empty{{con.user.user_ranking_id}}.png" alt="{{con.user.user_ranking_id}}" class="rankConnection">
+          </div>
+        </div>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<div class="container">
+  <button class="button enquiry">Profil anzeigen</button>
+  <button class="button enquiry">Nachricht senden</button>
+</div>
+</ion-content>
+</ion-view>
